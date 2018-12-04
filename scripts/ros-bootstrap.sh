@@ -26,15 +26,16 @@ rosdep update
 
 #Install RosInstall
 apt-get -y install python-rosinstall
+apt-get -y install python-rosinstall-generator python-wstool build-essential
 
 #Install Catkin tools
 apt-get -y install ros-kinetic-catkin
 
 #Install librealsense because turtlebot needs it i guess...
-sudo apt-get install -y ros-kinetic-librealsense
+# sudo apt-get install -y ros-kinetic-librealsense
 
 #Install turtlebot 
-apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-ar-track-alvar-msgs -y
+# apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-ar-track-alvar-msgs -y
 
 
 #Setup ROS environment variables

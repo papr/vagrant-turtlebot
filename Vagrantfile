@@ -14,15 +14,16 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = "ubuntu/xenial64"
 
   config.vm.provider "virtualbox" do |vb|
     # Customize the amount of memory and the number of CPU's allocated on the VM:
-    vb.memory = "4000"
+    vb.memory = "2000"
     vb.cpus = 2
+    vb.gui = true
 
     # Customize the amount of video RAM for the VM, over 256MB causes instability issues
-    vb.customize ["modifyvm", :id, "--vram", "128"]
+    # vb.customize ["modifyvm", :id, "--vram", "128"]
   end
 
   # ------------------------------------- SSH Rules ----------------------------------------
@@ -48,6 +49,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: "rosdep update", privileged: false
 
   # Get Xauth for X11 forwarding
-  config.vm.provision "shell", inline: "apt-get install xauth"
+  config.vm.provision "shell", inline: "apt-get -y install xauth"
 		
 end
